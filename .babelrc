@@ -1,0 +1,41 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "node": "current",
+          "browsers": ["> 1%", "last 2 versions", "not ie <= 7"]
+        }
+      }
+    ],
+    "stage-0"
+  ],
+  "plugins": [
+    [
+      "transform-vue-jsx",
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      },
+      "component",
+      {
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["env", "stage-0"],
+      "plugins": [
+        "istanbul",
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node"
+      ]
+    }
+  }
+}
